@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health Bot (personal-use tool)</title>
+  <meta name="description" content="Health Bot is a personal-use assistant for the account owner. It is not a Google product and does not replace medical advice.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">Health Bot</a>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <article class="wrap">
+      <p class="eyebrow">Personal-use tool</p>
+      <h1>Health Bot</h1>
+      <p class="lede"><strong>Health Bot</strong> is a personal-use assistant tool for the account owner. It helps with fitness, nutrition, and weight coaching by reading selected Google Health data the owner chooses to share.</p>
+      <aside class="notice" aria-label="Important limits">
+        <ul>
+          <li>Health Bot is not made by Google, is not endorsed by Google, and is not a Google product. Google Health is only a data source the owner may choose to connect.</li>
+          <li>Health Bot does not provide medical advice and does not replace a clinician, diagnosis, or treatment.</li>
+          <li>This site is not a dashboard. It does not show health data, and it does not offer sign-in.</li>
+        </ul>
+      </aside>
+
+      <h2>What it does</h2>
+      <ul>
+        <li>Pulls read-only health and fitness information from <strong>Google Health</strong> (for example weight and body composition that may arrive from a scale app through <strong>Health Connect</strong>, plus activity, sleep, and related metrics when available).</li>
+        <li>Uses that information, together with meals and habits the owner shares in chat, to give coaching summaries and reminders.</li>
+        <li>Is intended for <strong>one person’s own account</strong>, not as a public consumer product or multi-user service.</li>
+      </ul>
+
+      <h2>How Google Health connects</h2>
+      <ol>
+        <li>The owner authorizes <strong>Health Bot</strong> in Google’s sign-in / consent flow.</li>
+        <li>Health Bot uses that authorization to call Google’s Health APIs with <strong>read-only</strong> access.</li>
+        <li>Pulled data is used only to support the owner’s coaching and tracking conversations.</li>
+      </ol>
+      <p>Health Bot does <strong>not</strong> ask Google for write access to change health records.</p>
+
+      <h2>Privacy</h2>
+      <p>See the <a href="privacy.html">Privacy Policy</a> for what data is accessed, how it is used, how to revoke access, and known limits of this description.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about this personal tool can be sent to the developer contact email configured on the Health Bot Google Cloud OAuth branding settings (the owner’s project support email).</p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Personal-use tool for its owner. Not a Google product. Not medical advice.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Health Bot</title>
+  <meta name="description" content="Privacy policy for the personal-use Health Bot tool: Google Health data it may read, how that data is used, how to revoke access, and limits of this description.">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html">Health Bot</a>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="privacy.html" aria-current="page">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <article class="wrap">
+      <p class="eyebrow">Personal-use tool</p>
+      <h1>Health Bot Privacy Policy</h1>
+      <p class="updated">Last updated: <time datetime="2026-11-06">November 6, 2026 (America/New_York)</time></p>
+      <p>This policy describes how the personal-use <strong>Health Bot</strong> tool handles Google Account and Google Health information for the person who authorized it (the “owner”).</p>
+      <p>It is written from the <strong>known current implementation</strong>, not as a full legal warranty. Where details are unknown or changeable, that is called out below.</p>
+      <aside class="notice" aria-label="About these pages">
+        <p>These public pages are static files. They do not include forms, sign-in, analytics, or scripts, and they do not display health records. Hosting access logs, if any, are controlled by GitHub Pages. This policy does not describe that host’s logs or retention, and it does not mean Google has verified Health Bot.</p>
+      </aside>
+
+      <nav class="contents" aria-label="On this page">
+        <strong>On this page</strong>
+        <ol>
+          <li><a href="#who">Who this is for</a></li>
+          <li><a href="#data">Google data we request</a></li>
+          <li><a href="#use">How the data is used</a></li>
+          <li><a href="#processing">How the data is processed and stored</a></li>
+          <li><a href="#sharing">Sharing</a></li>
+          <li><a href="#retention">Retention and deletion</a></li>
+          <li><a href="#revoke">How to revoke Google access</a></li>
+          <li><a href="#children">Children</a></li>
+          <li><a href="#changes">Changes</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ol>
+      </nav>
+
+      <h2 id="who">Who this is for</h2>
+      <p>Health Bot is a <strong>personal tool</strong> operated with the owner’s own Google Cloud OAuth application (“Health Bot”). It is meant for the owner’s fitness, nutrition, and weight coaching—not for selling access to other people’s health data.</p>
+      <p>Health Bot is not made by Google, is not endorsed by Google, and is not a Google product. It does not provide medical advice and does not replace a clinician, diagnosis, or treatment.</p>
+
+      <h2 id="data">Google data we request</h2>
+      <p>Through Google’s OAuth consent screen, Health Bot may request <strong>read-only</strong> access to Google Health–related scopes such as:</p>
+      <ul>
+        <li>Activity and fitness</li>
+        <li>Health metrics and measurements</li>
+        <li>Sleep</li>
+        <li>Nutrition</li>
+        <li>Profile (basic Google Health profile fields)</li>
+      </ul>
+      <p>Exact scope names and wording are controlled by Google’s consent screen at authorization time.</p>
+      <p>In practice, the tool’s Google Health pull can retrieve metric families such as weight, body fat, height, heart-related daily metrics, exercise sessions, sleep summaries, steps, active minutes, distance, calories, floors, and profile fields when present in Google Health. Some authorized scopes (for example nutrition) may be granted even when a given pull does not export every possible data type.</p>
+      <p>Data in Google Health may originate from apps and devices the owner connects elsewhere (for example a scale app syncing through <strong>Health Connect</strong> into Google Health). Health Bot reads what Google Health exposes; it does not replace those source apps.</p>
+
+      <h2 id="use">How the data is used</h2>
+      <p>Authorized Google Health data is used to:</p>
+      <ul>
+        <li>Summarize weigh-ins and related metrics for the owner</li>
+        <li>Support fitness, nutrition, and weight coaching in chat</li>
+        <li>Power owner-requested reminders or digests when those routines are enabled</li>
+      </ul>
+      <p>It is <strong>not</strong> used to write or alter Google Health records through this connection.</p>
+
+      <h2 id="processing">How the data is processed and stored (known implementation)</h2>
+      <p>Based on the current scripts and how the assistant is used:</p>
+
+      <h3>Authorization tokens</h3>
+      <p>After the owner consents, OAuth tokens are stored <strong>locally</strong> on the assistant’s private workspace machine (as a local token file, with restrictive file permissions in the current script). Tokens are refreshed as needed to call Google’s APIs. <strong>Token file paths, client IDs, and secrets are not published on this site.</strong></p>
+
+      <h3>API pulls</h3>
+      <p>The tool calls Google’s Health API for the authorized user (<code>users/me</code>) and may write <strong>CSV exports</strong> of pulled metrics into a private workspace folder for analysis and coaching.</p>
+
+      <h3>Assistant processing</h3>
+      <p>Pulled metrics and related chat context are processed by the owner’s assistant (Grok Bot) to produce coaching replies, reminders, and optional journal/memory notes the owner has asked for. That means health-related content can appear in <strong>chat history</strong> and in <strong>assistant memory/journal entries</strong> the product stores for the owner.</p>
+
+      <h3>What we do not claim</h3>
+      <aside class="limit">
+        <p>This policy does <strong>not</strong> claim that data is “never shared,” “never leaves the device,” or “always encrypted at rest/in transit” beyond what is stated above. The assistant product may process messages and tool output through its normal AI and storage systems. Exact third-party subprocessors, retention clocks, and encryption details for the assistant product are <strong>not fully specified in the Health Bot scripts</strong> reviewed for this page.</p>
+      </aside>
+
+      <h2 id="sharing">Sharing</h2>
+      <ul>
+        <li>Health Bot is not designed as a marketplace or public feed of the owner’s health data.</li>
+        <li>Coaching answers may be shown to the owner in chat. If the owner uses group chats, shared bots, or forwards messages, those channels can expose content the owner chooses to share.</li>
+        <li>Revoking Google access (below) stops <strong>future</strong> Google API access. It does <strong>not</strong> by itself erase past chat logs, memory/journal notes, or local CSV exports already created.</li>
+      </ul>
+
+      <h2 id="retention">Retention and deletion (honest limits)</h2>
+      <ul>
+        <li><strong>Google-side access:</strong> The owner can revoke Health Bot’s Google Account access at any time (see below). After revoke, new pulls should fail until the owner authorizes again.</li>
+        <li><strong>Local exports / chat / memory:</strong> There is <strong>no automated “wipe all Health Bot copies on revoke”</strong> guarantee in the current implementation. The owner can ask the assistant to delete known local export files and to clear or stop journaling weigh-in notes. Product-level chat retention follows the assistant product’s own settings and policies, which are outside this script-level description.</li>
+      </ul>
+      <p>Unresolved items for a fuller policy (see gaps note for the maintainer) include formal retention periods, backup copies, and a documented wipe checklist.</p>
+
+      <h2 id="revoke">How to revoke Google access</h2>
+      <p>To review or remove apps that have access to your Google Account data:</p>
+      <ol>
+        <li>Open Google’s linked-apps / connections page in your Google Account: <a href="https://myaccount.google.com/connections" rel="noreferrer">https://myaccount.google.com/connections</a></li>
+        <li>Open <strong>Access to your Google Account</strong> (wording may vary slightly).</li>
+        <li>Select <strong>Health Bot</strong> (or the name shown on the consent screen).</li>
+        <li>Review permissions, then choose <strong>Remove access</strong> and confirm.</li>
+      </ol>
+      <p>Official Google help: <a href="https://support.google.com/accounts/answer/13533235" rel="noreferrer">Manage links between your Google Account &amp; apps from other developers</a>.</p>
+      <p>Removing access stops the app from using your Google Account data going forward. It does <strong>not</strong> automatically delete information the tool already stored outside Google (local exports, chat, memory). Ask the assistant or delete those copies separately if you want them removed.</p>
+
+      <h2 id="children">Children</h2>
+      <p>Health Bot is not directed at children and is not intended for users under 13 (or under the digital-consent age in the owner’s region).</p>
+
+      <h2 id="changes">Changes</h2>
+      <p>If the owner updates how Health Bot uses Google data in a material way, this policy text should be updated and the “Last updated” date changed.</p>
+
+      <h2 id="contact">Contact</h2>
+      <p>Use the developer / support email configured on the Health Bot Google Cloud OAuth branding page for privacy questions about this personal tool. That address is not printed on this site.</p>
+    </article>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Personal-use tool for its owner. Not a Google product. Not medical advice. This page does not mean Google has verified the app.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
